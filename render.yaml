@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: email-spam-classifier
+    env: python
+    buildCommand: pip install -r requirements.txt && python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
+    startCommand: streamlit run app.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0 
